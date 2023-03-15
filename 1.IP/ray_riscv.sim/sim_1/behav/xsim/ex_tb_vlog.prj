@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../ray_riscv.srcs/sources_1/new/DiffSet.v" \
+"../../../../ray_riscv.srcs/sources_1/new/Id.v" \
+"../../../../ray_riscv.srcs/sources_1/new/Id2Ex.v" \
+"../../../../ray_riscv.srcs/sources_1/new/If2Id.v" \
+"../../../../ray_riscv.srcs/sources_1/new/RayRiscv.v" \
+"../../../../ray_riscv.srcs/sources_1/new/RaySOC.v" \
+"../../../../ray_riscv.srcs/sources_1/new/Regs.v" \
+"../../../../ray_riscv.srcs/sources_1/new/Rom.v" \
+"../../../../ray_riscv.srcs/sources_1/new/ctrl.v" \
+"../../../../ray_riscv.srcs/sources_1/new/ex.v" \
+"../../../../ray_riscv.srcs/sources_1/new/ifetch.v" \
+"../../../../ray_riscv.srcs/sources_1/new/pc_reg.v" \
+"../../../../ray_riscv.srcs/sim_1/new/ex_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

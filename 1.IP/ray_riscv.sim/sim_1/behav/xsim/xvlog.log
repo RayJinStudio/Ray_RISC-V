@@ -1,0 +1,28 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/DiffSet.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DiffSet
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/Id.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Id
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/Id2Ex.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Id2Ex
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/If2Id.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module If2Id
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/RayRiscv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RayRiscv
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/RaySOC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RaySOC
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/Regs.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Regs
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/Rom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rom
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/ctrl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ctrl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/ex.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ex
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/ifetch.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ifetch
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PcReg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sim_1/new/ex_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ex_tb
+WARNING: [VRFC 10-3380] identifier 'r' is used before its declaration [D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sim_1/new/ex_tb.v:64]
+WARNING: [VRFC 10-3380] identifier 'r' is used before its declaration [D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sim_1/new/ex_tb.v:65]
