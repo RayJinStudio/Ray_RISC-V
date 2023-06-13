@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/pc_reg.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/defines.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/riscv.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/DiffSet.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/ctrl.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/Regs.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/Rom.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/ifetch.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/rtl/If2Id.v
+source_file = 1, D:/Ray/projects/ray_riscv/quartus/db/riscv.cbx.xml
+design_name = riscv
+instance = comp, \b~output\, b~output, riscv, 1
+instance = comp, \a~input\, a~input, riscv, 1
+instance = comp, \clk~input\, clk~input, riscv, 1
+instance = comp, \rst~input\, rst~input, riscv, 1

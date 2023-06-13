@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Jun 13 16:12:53 2023
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : riscv
+Top-level Entity Name : riscv
+Family : Cyclone IV E
+Device : EP4CE55F23C8
+Timing Models : Final
+Total logic elements : 0 / 55,856 ( 0 % )
+    Total combinational functions : 0 / 55,856 ( 0 % )
+    Dedicated logic registers : 0 / 55,856 ( 0 % )
+Total registers : 0
+Total pins : 4 / 325 ( 1 % )
+Total virtual pins : 0
+Total memory bits : 0 / 2,396,160 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 308 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
