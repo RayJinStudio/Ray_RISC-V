@@ -38,6 +38,12 @@ module Ex(
     output wire wFlagOut,                   // 是否要写通用寄存器
     output wire[`REGS_ADDR_BUS] wAddrOut,   // 写通用寄存器地
     
+    //bus
+    input wire[`CPU_BUS] busDataIn,
+    output reg[`CPU_BUS] busDataOut,
+    output reg[`CPU_BUS] busAddrOut,
+    output reg busWEOut,
+    
     output wire jumpFlagOut,
     output wire[`CPU_BUS] jumpAddrOut,
     output wire holdFlagOut
@@ -94,6 +100,7 @@ module Ex(
         reg_waddr = wAddrIn;
         hold_flag = `DEN;
         jump_flag = `DEN;
+        busWEOut = `DEN;
         jump_addr = 32'b0;
         
         case (opcode)
@@ -175,6 +182,15 @@ module Ex(
                 reg_wdata = instAddrIn + 32'd4;
             end
             `INST_LUI, `INST_AUIPC: reg_wdata = op1_add_op2_res;
+            `INST_LOAD: begin
+                busAddrOut = op1_add_op2_res;
+                reg_wdata = busDataIn;
+            end
+            `INST_STORE: begin
+                busWEOut = `EN;
+                busAddrOut = op1In;
+                busDataOut = op2In;
+            end
             default: reg_wdata = `ZeroWord;
         endcase
     end

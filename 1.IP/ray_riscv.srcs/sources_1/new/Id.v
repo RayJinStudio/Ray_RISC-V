@@ -148,6 +148,22 @@ module Id(
                 op1Out = {instIn[31:12], 12'b0};
                 op2Out = instAddrIn;
             end
+            `INST_LOAD: begin
+                wFlagOut = `REGS_WEN;
+                wAddrOut = rd;
+                regAddr1Out = rs1;
+                regAddr2Out = `ZeroRegADDR;
+                op1Out = regData1In;
+                op2Out = {{20{instIn[31]}}, instIn[31:20]};
+            end
+            `INST_STORE: begin
+                regAddr1Out = rs1;
+                regAddr2Out = rs2;
+                wFlagOut = `REGS_WDEN;
+                wAddrOut = `ZeroReg;
+                op1Out = regData1In + {{20{instIn[31]}}, instIn[31:25], instIn[11:7]};
+                op2Out = regData2In;
+            end
             default: begin
                 wFlagOut = `REGS_WDEN;
                 wAddrOut = `ZeroRegADDR;

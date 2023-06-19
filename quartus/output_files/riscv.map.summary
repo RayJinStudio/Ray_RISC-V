@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Jun 13 16:12:46 2023
+Analysis & Synthesis Status : Successful - Mon Jun 19 14:22:56 2023
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : riscv
 Top-level Entity Name : riscv
 Family : Cyclone IV E
-Total logic elements : 0
-    Total combinational functions : 0
-    Dedicated logic registers : 0
-Total registers : 0
-Total pins : 4
+Total logic elements : 58,377
+    Total combinational functions : 25,193
+    Dedicated logic registers : 33,449
+Total registers : 33449
+Total pins : 34
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

@@ -1,3 +1,4 @@
+`include "defines.v"
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
@@ -26,6 +27,10 @@ module Rom(
 );
 
     reg[`CPU_BUS] rom_mem[0:4095];
+    
+    initial begin
+        $readmemh("D:/Ray/projects/ray_riscv/2.test/led.txt",rom_mem);
+    end
     
     always@ (*) begin
         DataOut = rom_mem[AddrIn >> 2];

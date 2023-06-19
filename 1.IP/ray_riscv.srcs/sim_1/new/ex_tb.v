@@ -30,12 +30,12 @@ reg clk;
 reg rst;
 reg f = 1'b1;
 
-wire x3;
-assign x3 = ex_tb.risc.cpu.regs.regs[3];
-wire x26;
-assign x26 = ex_tb.risc.cpu.regs.regs[26];
-wire x27;
-assign x27 = ex_tb.risc.cpu.regs.regs[27];
+//wire x3;
+//assign x3 = ex_tb.risc.cpu.regs.regs[3];
+//wire x26;
+//assign x26 = ex_tb.risc.cpu.regs.regs[26];
+//wire x27;
+//assign x27 = ex_tb.risc.cpu.regs.regs[27];
 
 
 RaySOC risc(
@@ -50,24 +50,27 @@ initial begin
     rst <= 1'b0;
     #40
     rst <= 1'b1;
-    $readmemh("D:/RayJin/Downloads/inst_txt/rv32ui-p-bgeu.txt",ex_tb.risc.rom.rom_mem);
-end
-
-initial  begin
-    wait(x26);
-    #40;
-    if(x27 == 32'b1) begin
-        $display("success");
-    end
-    else begin
-        $display("fail at %d", x3);
-        for(r = 0; r<=31; r= r+1) begin
-            $display("x%2d = %d",r, ex_tb.risc.cpu.regs.regs[r]);
-        end
-    end
+    #200;
+    //$readmemh("D:/Ray/projects/ray_riscv/2.test/rv32ui-p-lw.txt",ex_tb.risc.rom.rom_mem);
 end
 
 integer r;
+//initial  begin
+//    wait(x26);
+//    #40;
+//    if(x27 == 32'b1) begin
+//        $display("success");
+//    end
+//    else begin
+//        $display("fail at %d", x3);
+//        for(r = 0; r<=31; r= r+1) begin
+//            $display("x%2d = %d",r, ex_tb.risc.cpu.regs.regs[r]);
+//        end
+//    end
+//    $stop;
+//end
+
+
 
 //initial  begin
 //    while(f) begin

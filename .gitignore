@@ -1,1 +1,10 @@
 _hdl_checker/
+./quartus/output_files/
+quartus/simulation/
+quartus/db/
+quartus/incremental_db/
+1.IP/ray_riscv.cache/
+1.IP/ray_riscv.hw/
+1.IP/ray_riscv.ip_user_files/
+1.IP/ray_riscv.sim/
+1.IP/ray_riscv.runs/

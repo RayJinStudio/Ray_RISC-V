@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="ex_tb_behav.wdb" id="1">
+      <db_ref path="ex_tb_func_synth.wdb" id="1">
          <top_modules>
             <top_module name="ex_tb" />
             <top_module name="glbl" />
@@ -11,13 +11,17 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="11.421910 us"></ZoomEndTime>
-      <Cursor1Time time="1.000000 us"></Cursor1Time>
+      <ZoomStartTime time="40.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="280.001 ns"></ZoomEndTime>
+      <Cursor1Time time="240.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="292"></NameColumnWidth>
-      <ValueColumnWidth column_width="132"></ValueColumnWidth>
+      <ValueColumnWidth column_width="127"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="0" />
+   <WVObjectSize size="1" />
+   <wvobject fp_name="/ex_tb/risc/io" type="array">
+      <obj_property name="ElementShortName">io[31:0]</obj_property>
+      <obj_property name="ObjectShortName">io[31:0]</obj_property>
+   </wvobject>
 </wave_config>

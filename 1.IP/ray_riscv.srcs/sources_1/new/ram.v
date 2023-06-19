@@ -1,35 +1,34 @@
-`timescale 1ns / 1ps
 `include "defines.v"
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2022/12/18 17:11:09
-// Design Name: 
-// Module Name: ram
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-
+// ram module
 module Ram(
-    input wire[`CPU_BUS] AddrIn,
-    output reg[`CPU_BUS] DataOut
-);
 
-    reg[`CPU_BUS] rom_mem[0:4095];
-    
-    always@ (*) begin
-        DataOut = rom_mem[AddrIn >> 2];
+    input wire clk,
+    input wire rst,
+
+    input wire weIn,                   // write enable
+    input wire[`MemAddrBus] addrIn,    // addr
+    input wire[`MemBus] dataIn,
+
+    output reg[`MemBus] dataOut       // read data
+
+    );
+
+    reg[`MemBus] _ram[0:`MemNum - 1];
+
+
+    always @ (posedge clk) begin
+        if (weIn == `EN) begin
+            _ram[addrIn[31:2]] <= dataIn;
+        end
     end
-    
+
+    always @ (*) begin
+        if (rst == `REST_EN) begin
+            dataOut = `ZeroWord;
+        end else begin
+            dataOut = _ram[addrIn[31:2]];
+        end
+    end
+
 endmodule

@@ -25,7 +25,11 @@ module RayRiscv(
     input wire clk,
     input wire rst,
     input wire[`CPU_BUS] dataIn,
-    output wire[`CPU_BUS] dataAddrOut
+    input wire[`CPU_BUS] busDataIn,
+    output wire[`CPU_BUS] busDataOut,
+    output wire[`CPU_BUS] dataAddrOut,
+    output wire[`CPU_BUS] busAddrOut,
+    output wire busWEOut
 );
 
 //PcReg to Ifetch
@@ -186,6 +190,12 @@ Ex ex(
     .wDataOut(ex2RegsWData),       // 写寄存器数据
     .wFlagOut(ex2RegsWFlag),                   // 是否要写通用寄存器
     .wAddrOut(ex2RegsWAddr),   // 写通用寄存器地
+    
+    //Bus
+    .busDataIn(busDataIn),
+    .busDataOut(busDataOut),
+    .busAddrOut(busAddrOut),
+    .busWEOut(busWEOut),
     
     .jumpFlagOut(ex2CtrlJmpFlag),
     .jumpAddrOut(ex2CtrlJmpAddr),

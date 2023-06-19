@@ -4,6 +4,10 @@
 `define EN 1'b1
 `define DEN 1'b0
 
+`define MemNum 1024  // memory depth(how many words)
+`define MemBus 31:0
+`define MemAddrBus 31:0
+
 `define REST_EN 1'b0
 `define REST_DEN 1'b1
 `define REGS_NUM 32
@@ -81,3 +85,6 @@
 `define INST_NOP    32'h00000013
 `define INST_MRET   32'h30200073
 `define INST_RET    32'h00008067
+
+`define INST_LOAD  7'b0000011
+`define INST_STORE 7'b0100011

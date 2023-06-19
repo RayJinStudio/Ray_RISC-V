@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "D:/Ray/Vivado/ray_riscv/ray_riscv.runs/synth_1/RaySOC.tcl"
+  variable script "D:/Ray/projects/ray_riscv/1.IP/ray_riscv.runs/synth_1/RaySOC.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,37 +70,42 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param chipscope.maxJobs 2
 set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir D:/Ray/Vivado/ray_riscv/ray_riscv.cache/wt [current_project]
-set_property parent.project_path D:/Ray/Vivado/ray_riscv/ray_riscv.xpr [current_project]
+set_property webtalk.parent_dir D:/Ray/projects/ray_riscv/1.IP/ray_riscv.cache/wt [current_project]
+set_property parent.project_path D:/Ray/projects/ray_riscv/1.IP/ray_riscv.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo d:/Ray/Vivado/ray_riscv/ray_riscv.cache/ip [current_project]
+set_property ip_output_repo d:/Ray/projects/ray_riscv/1.IP/ray_riscv.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/defines.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/DiffSet.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/Id.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/Id2Ex.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/If2Id.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/RayRiscv.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/Regs.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/Rom.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/ctrl.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/ex.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/ifetch.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/pc_reg.v
-  D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/sources_1/new/RaySOC.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/defines.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/DiffSet.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/Id.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/Id2Ex.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/If2Id.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/RayRiscv.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/Regs.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/Rom.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/ctrl.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/ex.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/ifetch.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/pc_reg.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/ram.v
+  D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/RaySOC.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -113,7 +118,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental D:/Ray/Vivado/ray_riscv/ray_riscv.srcs/utils_1/imports/synth_1/alu.dcp
+read_checkpoint -auto_incremental -incremental D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/utils_1/imports/synth_1/alu.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

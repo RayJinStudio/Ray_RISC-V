@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/Ray/Vivado/ray_riscv/ray_riscv.runs/synth_1'
+HD_PWD='D:/Ray/projects/ray_riscv/1.IP/ray_riscv.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
