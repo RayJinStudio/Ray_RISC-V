@@ -1,2 +1,0 @@
-Breakpoint File Version 1.0
-68,true,"D:/Ray/projects/ray_riscv/1.IP/ray_riscv.srcs/sources_1/new/RaySOC.v"
