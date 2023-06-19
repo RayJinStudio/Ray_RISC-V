@@ -1,5 +1,5 @@
 _hdl_checker/
-./quartus/output_files/
+quartus/output_files/
 quartus/simulation/
 quartus/db/
 quartus/incremental_db/
