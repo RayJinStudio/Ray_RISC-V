@@ -3,7 +3,7 @@
 module riscv(
     input wire clk,
     input wire rst,
-    output wire[31:0] io
+    output reg[7:0] io
 );
 
 //CPU to ROM
@@ -32,20 +32,11 @@ Rom rom(
     .DataOut(cpu2RomData)
 );
 
-Ram ram(.clk(clk),
-        .rst(rst),
-        .weIn(cpu2BusWE),
-        .addrIn(cpu2BusAddr),    // addr
-        .dataIn(cpu2BusData),
-        .dataOut(bus2CPUData)
-);
 
-reg [31:0] ioReg;
-assign io = ioReg;
-//GPIO 还没实现好
-always @(*) begin
-    if(cpu2BusWE && cpu2BusAddr == 32'd5000)
-        ioReg = cpu2BusData;
+//GPIO
+always @(posedge clk) begin
+    if(cpu2BusWE && (cpu2BusAddr == 32'd5000))
+        io <= cpu2BusData[7:0];
 end
 
 endmodule

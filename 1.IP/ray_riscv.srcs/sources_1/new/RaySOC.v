@@ -52,19 +52,19 @@ Rom rom(
     .DataOut(cpu2RomData)
 );
 
-Ram ram(.clk(clk),
-        .rst(rst),
-        .weIn(cpu2BusWE),
-        .addrIn(cpu2BusAddr),    // addr
-        .dataIn(cpu2BusData),
-        .dataOut(bus2CPUData)
-);
+//Ram ram(.clk(clk),
+//        .rst(rst),
+//        .weIn(cpu2BusWE),
+//        .addrIn(cpu2BusAddr),    // addr
+//        .dataIn(cpu2BusData),
+//        .dataOut(bus2CPUData)
+//);
 
 reg [31:0] ioReg;
 assign io = ioReg;
 //GPIO
 always @(*) begin
-    if(cpu2BusWE && cpu2BusAddr == 32'd5000)
+    if(cpu2BusWE)
         ioReg = cpu2BusData;
 end
 

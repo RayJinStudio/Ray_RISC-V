@@ -187,9 +187,9 @@ module Ex(
                 reg_wdata = busDataIn;
             end
             `INST_STORE: begin
-                busWEOut = `EN;
                 busAddrOut = op1In;
                 busDataOut = op2In;
+                busWEOut = `EN;
             end
             default: reg_wdata = `ZeroWord;
         endcase
