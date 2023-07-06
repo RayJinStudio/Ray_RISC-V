@@ -11,7 +11,6 @@ module Alu(
     always @ (*) begin
         case (aluOpt)
             `ALU_ADD: aluRes = aluParam1 + aluParam2;
-            `ALU_SUB: aluRes = aluParam2 - aluParam1;
             default: aluRes = `CPU_W'b0;
         endcase
     end
